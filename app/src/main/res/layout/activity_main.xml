@@ -11,15 +11,15 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="13dp"
         android:orientation="horizontal"
-        app:constraint_referenced_ids="imageView7,textView5,imageView9"
+        app:constraint_referenced_ids="settingsIco,USER,peoples"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/settingsIco"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
@@ -29,7 +29,7 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/USER"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PIyush_JT__"
@@ -38,7 +38,7 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/peoples"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginEnd="8dp"
@@ -58,14 +58,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        app:constraint_referenced_ids="imageView5,imageView6,userSetts"
+        app:constraint_referenced_ids="profilePic,userSetts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/profilePic"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="15dp"
@@ -77,10 +77,10 @@
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:orientation="vertical"
-        app:constraint_referenced_ids="textView6,username,butns"
+        app:constraint_referenced_ids="username,butns"
         app:layout_constraintBottom_toBottomOf="@+id/user"
         app:layout_constraintHorizontal_weight="0.75"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toEndOf="@+id/profilePic"
         app:layout_constraintTop_toTopOf="@+id/user" />
 
     <TextView
@@ -92,13 +92,13 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView6" />
+        app:layout_constraintStart_toEndOf="@+id/profilePic" />
 
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/butns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="button,button3,editProf,ViewArch"
+        app:constraint_referenced_ids="editProf,ViewArch"
         app:layout_constraintStart_toStartOf="@+id/username" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -126,7 +126,7 @@
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/biogrp"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:constraint_referenced_ids="biotxt1,biotxt2, biotxt3"
@@ -144,7 +144,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@+id/imageView6" />
+        app:layout_constraintStart_toStartOf="@+id/profilePic" />
 
     <TextView
         android:id="@+id/biotxt2"
@@ -153,7 +153,7 @@
         android:text="૩૦-૭ 🗡️"
         android:textSize="18sp"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintStart_toStartOf="@+id/profilePic"
         app:layout_constraintTop_toBottomOf="@+id/biotxt1" />
 
     <TextView
@@ -163,7 +163,7 @@
         android:textSize="18sp"
         android:textColor="@color/white"
         android:text="Patel 🕉️"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintStart_toStartOf="@+id/profilePic"
         app:layout_constraintTop_toBottomOf="@+id/biotxt2" />
 
     <com.google.android.material.internal.BaselineLayout
@@ -172,5 +172,105 @@
         android:layout_marginTop="5dp"
         android:background="#AAAAAA"
         app:layout_constraintTop_toBottomOf="@+id/biogrp" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/accDtls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:constraint_referenced_ids="posts, followers, following"
+        app:layout_constraintTop_toBottomOf="@id/biogrp" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/posts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:constraint_referenced_ids="noPst, txtPst"
+        app:layout_constraintEnd_toStartOf="@+id/followers"
+        app:layout_constraintStart_toStartOf="@+id/accDtls" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPst"
+        android:textColor="#DDDDDD"
+        android:text="Posts"/>
+
+    <TextView
+        android:id="@+id/noPst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtPst"
+        app:layout_constraintStart_toStartOf="@+id/txtPst" />
+
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/followers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:constraint_referenced_ids="noFlwr, txtFlwr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/accDtls"
+        tools:layout_editor_absoluteY="266dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFlwr"
+        android:textColor="#DDDDDD"
+        android:text="followers"/>
+
+    <TextView
+        android:id="@+id/noFlwr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="73"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtFlwr"
+        app:layout_constraintStart_toStartOf="@+id/txtFlwr" />
+
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:constraint_referenced_ids="noFlwng, txtFlwng"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintStart_toEndOf="@+id/followers"
+        tools:layout_editor_absoluteY="555dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFlwng"
+        android:textColor="#DDDDDD"
+        android:text="following"/>
+
+    <TextView
+        android:id="@+id/noFlwng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="88"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtFlwng"
+        app:layout_constraintStart_toStartOf="@+id/txtFlwng" />
+
+    <com.google.android.material.internal.BaselineLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#AAAAAA"
+        app:layout_constraintTop_toBottomOf="@+id/accDtls" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
