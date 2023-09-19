@@ -46,6 +46,13 @@
         app:layout_constraintEnd_toEndOf="@+id/header"
         tools:layout_editor_absoluteY="173dp" />
 
+    <com.google.android.material.internal.BaselineLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#AAAAAA"
+        app:layout_constraintBottom_toTopOf="@+id/user"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/user"
         android:layout_width="match_parent"
@@ -115,5 +122,55 @@
         android:textAllCaps="false"
         android:text="View Archive"
         android:textSize="10sp" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/biogrp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:constraint_referenced_ids="biotxt1,biotxt2, biotxt3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userSetts" />
+
+    <TextView
+        android:id="@+id/biotxt1"
+        android:layout_width="wrap_content"
+        android:paddingBottom="10dp"
+        android:layout_height="wrap_content"
+        android:text="Piyush Thummar"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/imageView6" />
+
+    <TextView
+        android:id="@+id/biotxt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="૩૦-૭ 🗡️"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/biotxt1" />
+
+    <TextView
+        android:id="@+id/biotxt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:text="Patel 🕉️"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/biotxt2" />
+
+    <com.google.android.material.internal.BaselineLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#AAAAAA"
+        app:layout_constraintTop_toBottomOf="@+id/biogrp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
