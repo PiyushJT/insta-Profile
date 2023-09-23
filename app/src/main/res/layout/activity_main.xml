@@ -7,6 +7,7 @@
     android:background="#000000"
     tools:context=".MainActivity">
 
+
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/header"
         android:layout_width="match_parent"
@@ -187,16 +188,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:constraint_referenced_ids="noPst, txtPst"
-        app:layout_constraintEnd_toStartOf="@+id/followers"
-        app:layout_constraintStart_toStartOf="@+id/accDtls" />
+        app:constraint_referenced_ids="noPst, txtPst" />
 
     <TextView
+        android:id="@+id/txtPst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtPst"
+        android:text="Posts"
         android:textColor="#DDDDDD"
-        android:text="Posts"/>
+        app:layout_constraintEnd_toEndOf="@+id/posts"
+        app:layout_constraintStart_toStartOf="@+id/posts"
+        app:layout_constraintTop_toBottomOf="@+id/noPst" />
 
     <TextView
         android:id="@+id/noPst"
@@ -215,16 +217,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:constraint_referenced_ids="noFlwr, txtFlwr"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/accDtls"
+        tools:layout_editor_absoluteX="209dp"
         tools:layout_editor_absoluteY="266dp" />
 
     <TextView
+        android:id="@+id/txtFlwr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtFlwr"
+        android:text="followers"
         android:textColor="#DDDDDD"
-        android:text="followers"/>
+        app:layout_constraintEnd_toEndOf="@+id/followers"
+        app:layout_constraintStart_toStartOf="@+id/followers"
+        app:layout_constraintTop_toBottomOf="@+id/noFlwr" />
 
     <TextView
         android:id="@+id/noFlwr"
@@ -234,7 +238,8 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/txtFlwr"
-        app:layout_constraintStart_toStartOf="@+id/txtFlwr" />
+        app:layout_constraintStart_toStartOf="@+id/txtFlwr"
+        app:layout_constraintTop_toTopOf="@+id/followers" />
 
 
     <androidx.constraintlayout.helper.widget.Flow
@@ -243,17 +248,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:constraint_referenced_ids="noFlwng, txtFlwng"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
-        app:layout_constraintStart_toEndOf="@+id/followers"
-        tools:layout_editor_absoluteY="555dp" />
+        tools:layout_editor_absoluteX="354dp"
+        tools:layout_editor_absoluteY="266dp" />
 
     <TextView
+        android:id="@+id/txtFlwng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtFlwng"
+        android:text="following"
         android:textColor="#DDDDDD"
-        android:text="following"/>
+        app:layout_constraintEnd_toEndOf="@+id/following"
+        app:layout_constraintStart_toStartOf="@+id/following"
+        app:layout_constraintTop_toBottomOf="@+id/noFlwng" />
 
     <TextView
         android:id="@+id/noFlwng"
@@ -266,11 +272,77 @@
         app:layout_constraintStart_toStartOf="@+id/txtFlwng" />
 
     <com.google.android.material.internal.BaselineLayout
+        android:id="@+id/baselineLayout"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="5dp"
         android:background="#AAAAAA"
         app:layout_constraintTop_toBottomOf="@+id/accDtls" />
 
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/postMenus"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:constraint_referenced_ids="grid,bookmark,tagged"
+        app:layout_constraintTop_toBottomOf="@+id/baselineLayout" />
+
+    <ImageView
+        android:id="@+id/grid"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintStart_toStartOf="@+id/postMenus"
+        app:srcCompat="@drawable/grid" />
+
+    <ImageView
+        android:id="@+id/bookmark"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:srcCompat="@drawable/bookmark" />
+
+    <ImageView
+        android:id="@+id/tagged"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/postMenus"
+        app:srcCompat="@drawable/tagged_person" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/photos"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="5dp"
+        app:constraint_referenced_ids="post1,post2, post3, post4"
+        app:layout_constraintTop_toBottomOf="@+id/postMenus"
+        android:orientation="horizontal"
+        app:flow_maxElementsWrap="3"
+        app:flow_horizontalGap="3dp"
+        app:flow_verticalGap="1dp"
+        app:flow_wrapMode="aligned"/>
+
+    <ImageView
+        android:id="@+id/post1"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:srcCompat="@drawable/img_d"/>
+
+    <ImageView
+        android:id="@+id/post2"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:srcCompat="@drawable/img_c"/>
+
+    <ImageView
+        android:id="@+id/post3"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:srcCompat="@drawable/img_chai"/>
+
+    <ImageView
+        android:id="@+id/post4"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:srcCompat="@drawable/img_prof"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
